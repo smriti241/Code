@@ -1,0 +1,14 @@
+T = int(input())
+if T>=1 and T<=100:
+    for i in range(T):
+        a,b,N = map(int,input().split())
+        if N<=30:
+            for j in range(N):
+                if (j+1)%2 != 0:
+                    a = a*2
+                if (j+1)%2 == 0:
+                    b = b*2
+            if a>b:
+                print(int(a/b))
+            else:
+                print(int(b/a))
