@@ -1,0 +1,23 @@
+#BRICKS: small:1 inch big: 5 inches
+def make_bricks(small,big,goal):
+    n=big*5+small #the biggest value of bricks
+    if n==goal:
+        return True
+    elif n<goal:
+        return False
+    #Recursion
+    else:
+        m=n-goal
+        if(m%5==0):
+            if big==0:
+                return False
+            return make_bricks(small,big-1,goal)
+        else:
+            if small==0:
+                return False
+            return make_bricks(small-1,big,goal)
+
+small=int(input())
+big=int(input())
+goal=int(input())
+print(make_bricks(small,big,goal))
